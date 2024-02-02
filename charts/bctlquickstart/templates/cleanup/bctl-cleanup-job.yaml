@@ -3,8 +3,8 @@ kind: Job
 metadata:
   name: {{ include "bctlquickstartchart.cleanupJobName" . }}
   annotations:
-    "helm.sh/hook": pre-delete # run before delete (we still need the RBAC)
-    "helm.sh/hook-delete-policy": before-hook-creation, hook-succeeded
+    helm.sh/hook: pre-delete # run before delete (we still need the RBAC)
+    helm.sh/hook-delete-policy: before-hook-creation, hook-succeeded
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "bctlquickstartchart.labels" . | nindent 4 }}

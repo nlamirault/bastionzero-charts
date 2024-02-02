@@ -6,9 +6,9 @@ metadata:
   labels:
     {{- include "bctlquickstartchart.labels" . | nindent 4 }}
   annotations:
-    "helm.sh/hook": post-install
-    "helm.sh/hook-weight": "0"
-    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+    helm.sh/hook: post-install
+    helm.sh/hook-weight: "0"
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
   namespace: {{ .Release.Namespace }}
 spec:
     backoffLimit: 0
